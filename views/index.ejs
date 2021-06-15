@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rimon's Daily</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="brand"><h2>RIMON's Daily</h2></div>
+      <div class="navitems">
+        <ul>
+          <a href="/"><li>HOME</li></a>
+          <a href="/about"><li>ABOUT US</li></a>
+          <a href="/contact"><li>CONTACT</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="page-title">
+      <h1><%= pageName %></h1>
+      <p><%= pageIntro %></p>
+    </div>
+    <div class="b4post">
+      <h1>Latest Posts</h1>
+    </div>
+    <div class="blog">
+      <div class="posts">
+        <% for(let i = 0; i < postData.length; i++) { %>
+        <div class="post-title"><h2><%= postData[0].title %></h2></div>
+        <div class="post-content">
+          <p>
+            <%= postData[0].content.substring(0, 100) + " ..." %><a
+              href="/posts/<%=postData[0].title%>"
+              >Read More</a
+            >
+          </p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
